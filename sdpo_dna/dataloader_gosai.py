@@ -3,10 +3,11 @@ import pandas as pd
 import typing
 import math
 import utils
+# import drakes_dna.utils as utils
 import numpy as np
 import os
 
-base_path = '/data/scratch/wangchy/seqft/'
+base_path = 'data_and_model/'
 LOGGER = utils.get_logger(__name__)
 DNA_ALPHABET = {'A': 0, 'C': 1, 'G': 2, 'T': 3} #, 'M': 4}
 INDEX_TO_DNA = {v: k for k, v in DNA_ALPHABET.items()}
@@ -35,12 +36,24 @@ def batch_dna_tokenize(batch_seq):
     """
     tokenized_batch = np.array([[DNA_ALPHABET[c] for c in seq] for seq in batch_seq])
     return tokenized_batch
+  
+def gosai2sorted_array():
+  df = pd.read_csv(os.path.join(base_path, 'mdlm/gosai_data/dataset.csv.gz'), index_col=0) # (735156, 5)
+  array = df.sort_values('hepg2').to_numpy()[:, 1:3]
+  return array
+  
+def gosai2array():
+  df = pd.read_csv(os.path.join(base_path, 'mdlm/gosai_data/dataset.csv.gz'), index_col=0) # (735156, 5)
+  array = df.to_numpy()[:, 1:3]
+  return array
 
 class GosaiDataset(torch.utils.data.Dataset):
-    def __init__(self):
-        data_df = pd.read_csv(os.path.join(base_path, f'mdlm/gosai_data/processed_data/gosai_all.csv'))
+    def __init__(self, data_path='mdlm/gosai_data/processed_data/gosai_all.csv'):
+        # data_df = pd.read_csv(os.path.join(base_path, f'mdlm/gosai_data/processed_data/gosai_all.csv'))
+        data_df = pd.read_csv(os.path.join(base_path, data_path))
         self.seqs = torch.tensor(data_df['seq'].apply(lambda x: [DNA_ALPHABET[c] for c in x]).tolist())
         self.clss = torch.tensor(data_df[['hepg2', 'k562', 'sknsh']].to_numpy())
+        self.df = data_df
         LOGGER.info(f'Loaded data: seqs shape: {self.seqs.shape}, clss shape: {self.clss.shape}')
 
     def __len__(self):
@@ -48,7 +61,6 @@ class GosaiDataset(torch.utils.data.Dataset):
 
     def __getitem__(self, idx):
         return {'seqs': self.seqs[idx], 'clss': self.clss[idx], 'attention_mask': torch.ones(len(self.seqs[idx]))}
-
 
 def get_datasets_gosai():
   return GosaiDataset()
@@ -67,7 +79,6 @@ def get_dataloaders_gosai(config, skip_valid=False, valid_seed=None):
       f'Eval Batch Size for {config.eval.batch_size} '
       f'not divisible by {num_gpus}.')
   train_set = GosaiDataset()
-  # randomly sample a subset of the train_set as valid_set
   valid_set = torch.utils.data.Subset(train_set, np.random.choice(len(train_set), 40000, replace=False))
   test_set = torch.utils.data.Subset(train_set, np.random.choice(len(train_set), 40000, replace=False))
 

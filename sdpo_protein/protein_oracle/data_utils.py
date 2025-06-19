@@ -103,3 +103,36 @@ def featurize(batch, device):
     chain_encoding_all = mask.clone()
     return X, S, mask, chain_M, residue_idx, chain_encoding_all, S_wt
 
+def batch_ints_to_strings(batch_int_tensor, alphabet=ALPHABET, pad_value=None):
+    """
+    Convert a batch of integer sequences (stored as a PyTorch tensor) to a list of strings.
+    
+    Args:
+        batch_int_tensor (torch.Tensor): A tensor of shape (B, L) containing integer indices.
+        alphabet (str): The string of characters corresponding to indices.
+        pad_value (int, optional): If provided, treat this value as a padding token 
+                                   and stop conversion when it is encountered in a sequence.
+    
+    Returns:
+        List[str]: A list of string sequences.
+    """
+    sequences = []
+    # Convert tensor to a list of lists for easier processing.
+    batch_list = batch_int_tensor.tolist()
+    
+    for seq in batch_list:
+        # Optionally handle padded sequences: stop at the first occurrence of pad_value.
+        if pad_value is not None:
+            try:
+                pad_index = seq.index(pad_value)
+                seq = seq[:pad_index]
+            except ValueError:
+                # pad_value not found in this sequence, continue converting the full sequence.
+                pass
+        try:
+            string_seq = ''.join(alphabet[i] for i in seq)
+        except IndexError as e:
+            raise ValueError("One or more indices in the sequence are out of range for the provided alphabet.") from e
+        sequences.append(string_seq)
+    
+    return sequences

@@ -58,7 +58,7 @@ eval:
 
 optim:
   weight_decay: 0
-  lr: 3e-4
+  lr: 1e-5
   beta1: 0.9
   beta2: 0.999
   eps: 1e-8
@@ -79,7 +79,7 @@ trainer:
   val_check_interval: 1000
 
 wandb:
-  project: gosai-dna
+  project: gosai-sdpo-dna
   notes: null
   group: null
   job_type: null
@@ -90,7 +90,7 @@ wandb:
 
 hydra:
   run:
-    dir: /data/scratch/wangchy/seqft/mdlm/outputs_gosai/${now:%Y.%m.%d}/${now:%H%M%S}
+    dir: data_and_model/mdlm/outputs_gosai/${now:%Y.%m.%d}/${now:%H%M%S}
   job:
     chdir: true
 
@@ -100,7 +100,3 @@ checkpointing:
   # Note: `checkpoints` path should correspond to `checkpoint_every_n_steps.dirpath`
   resume_from_ckpt: true
   resume_ckpt_path: ${.save_dir}/checkpoints/last.ckpt
-
-finetuning:
-  gumbel_softmax_temp: 1.0
-  truncate_steps: 3
