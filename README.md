@@ -1,9 +1,8 @@
-# Discrete Diffusion Trajectory Alignment
-via Stepwise Decomposition
+# Discrete Diffusion Trajectory Alignment via Stepwise Decomposition
 
 The repository contains the code for the `SDPO` method presented in the paper: Discrete Diffusion Trajectory Alignment
 via Stepwise Decomposition.
-`SDPO` is a fine-tuning method for reward optimization or alignment in discrete diffusion models.
+`SDPO` is a fine-tuning method for the reward optimization or alignment of discrete diffusion models.
 
 ## Data and Model Weights
 
