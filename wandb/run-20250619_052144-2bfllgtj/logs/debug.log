@@ -1,0 +1,41 @@
+2025-06-19 05:21:44,095 INFO    MainThread:1841477 [wandb_setup.py:_flush():67] Current SDK version is 0.19.7
+2025-06-19 05:21:44,095 INFO    MainThread:1841477 [wandb_setup.py:_flush():67] Configure stats pid to 1841477
+2025-06-19 05:21:44,095 INFO    MainThread:1841477 [wandb_setup.py:_flush():67] Loading settings from /home/austin/.config/wandb/settings
+2025-06-19 05:21:44,095 INFO    MainThread:1841477 [wandb_setup.py:_flush():67] Loading settings from /home/austin/sdpo-private/wandb/settings
+2025-06-19 05:21:44,095 INFO    MainThread:1841477 [wandb_setup.py:_flush():67] Loading settings from environment variables
+2025-06-19 05:21:44,095 INFO    MainThread:1841477 [wandb_init.py:setup_run_log_directory():647] Logging user logs to /home/austin/sdpo-private/wandb/run-20250619_052144-2bfllgtj/logs/debug.log
+2025-06-19 05:21:44,095 INFO    MainThread:1841477 [wandb_init.py:setup_run_log_directory():648] Logging internal logs to /home/austin/sdpo-private/wandb/run-20250619_052144-2bfllgtj/logs/debug-internal.log
+2025-06-19 05:21:44,095 INFO    MainThread:1841477 [wandb_init.py:init():761] calling init triggers
+2025-06-19 05:21:44,095 INFO    MainThread:1841477 [wandb_init.py:init():766] wandb.init called with sweep_config: {}
+config: {'seed': 0, 'base_path': 'data_and_model/', 'model_path': 'mdlm/outputs_gosai/pretrained.ckpt', 'ref_model_path': 'mdlm/outputs_gosai/pretrained.ckpt', 'num_epochs': 0, 'lr': 0.0003, 'K': 1000, 'config_path': 'configs_gosai', 'config_name': 'config_sdpo_gosai.yaml', 'beta': 0.5, 'beta1': 0.9, 'beta2': 0.999, 'eps': 1e-08, 'weight_decay': 0.0, 'save_path': 'results.pt', 'verbose': True, 'wandb': True, 'generator': 'rkl', 'eval_every': 20, '_wandb': {}}
+2025-06-19 05:21:44,095 INFO    MainThread:1841477 [wandb_init.py:init():784] starting backend
+2025-06-19 05:21:44,095 INFO    MainThread:1841477 [wandb_init.py:init():788] sending inform_init request
+2025-06-19 05:21:44,097 INFO    MainThread:1841477 [backend.py:_multiprocessing_setup():97] multiprocessing start_methods=fork,spawn,forkserver, using: fork
+2025-06-19 05:21:44,097 INFO    MainThread:1841477 [wandb_init.py:init():803] backend started and connected
+2025-06-19 05:21:44,101 INFO    MainThread:1841477 [wandb_init.py:init():896] updated telemetry
+2025-06-19 05:21:44,131 INFO    MainThread:1841477 [wandb_init.py:init():920] communicating run to backend with 90.0 second timeout
+2025-06-19 05:21:44,492 INFO    MainThread:1841477 [wandb_init.py:init():995] starting run threads in backend
+2025-06-19 05:21:44,621 INFO    MainThread:1841477 [wandb_run.py:_console_start():2377] atexit reg
+2025-06-19 05:21:44,621 INFO    MainThread:1841477 [wandb_run.py:_redirect():2227] redirect: wrap_raw
+2025-06-19 05:21:44,621 INFO    MainThread:1841477 [wandb_run.py:_redirect():2292] Wrapping output streams.
+2025-06-19 05:21:44,622 INFO    MainThread:1841477 [wandb_run.py:_redirect():2317] Redirects installed.
+2025-06-19 05:21:44,623 INFO    MainThread:1841477 [wandb_init.py:init():1037] run started, returning control to user process
+2025-06-19 05:23:18,436 WARNING MsgRouterThr:1841477 [router.py:message_loop():77] message_loop has been closed
+Traceback (most recent call last):
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/wandb/sdk/interface/router_sock.py", line 28, in _read_message
+    resp = self._sock_client.read_server_response(timeout=1)
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 285, in read_server_response
+    data = self._read_packet_bytes(timeout=timeout)
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/wandb/sdk/lib/sock_client.py", line 270, in _read_packet_bytes
+    raise SockClientClosedError
+wandb.sdk.lib.sock_client.SockClientClosedError
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/wandb/sdk/interface/router.py", line 70, in message_loop
+    msg = self._read_message()
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/wandb/sdk/interface/router_sock.py", line 30, in _read_message
+    raise MessageRouterClosedError from e
+wandb.sdk.interface.router.MessageRouterClosedError
+2025-06-19 05:23:18,438 INFO    MsgRouterThr:1841477 [mailbox.py:close():115] Closing mailbox, abandoning 1 handles.

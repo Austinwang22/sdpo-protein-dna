@@ -1,0 +1,18 @@
+0it [00:00, ?it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:08<00:00,  1.16it/s]
+[34m[1mwandb[0m: [33mWARNING[0m Calling wandb.login() after wandb.init() has no effect.
+[34m[1mwandb[0m: Downloading large artifact human_state_dict:latest, 939.29MB. 1 files...
+[34m[1mwandb[0m:   1 of 1 files downloaded.
+Done. 0:0:1.7
+Mpdel's sample avg. log-likelihood: -254.7736358642578, Median log-likelihood: -261.91357421875
+[34m[1mwandb[0m: [33mWARNING[0m Calling wandb.login() after wandb.init() has no effect.
+[34m[1mwandb[0m: Downloading large artifact human_state_dict:latest, 939.29MB. 1 files...
+[34m[1mwandb[0m:   1 of 1 files downloaded.
+Done. 0:0:1.2
+Model avg. generated sample predicted HepG2: 0.43804463744163513, median predicted HepG2: 0.18560835719108582
+[34m[1mwandb[0m: [33mWARNING[0m Calling wandb.login() after wandb.init() has no effect.
+[34m[1mwandb[0m: Downloading large artifact human_state_dict:latest, 939.29MB. 1 files...
+[34m[1mwandb[0m:   1 of 1 files downloaded.
+Done. 0:0:1.3
+Model ATAC accuracy: 0.0171875
+Model generated 3-mer Pearson correlation: -0.047195630292409294

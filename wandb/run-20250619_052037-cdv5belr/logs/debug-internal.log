@@ -1,0 +1,15 @@
+{"time":"2025-06-19T05:20:37.99723934Z","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"/home/austin/sdpo-private/wandb/run-20250619_052037-cdv5belr/logs/debug-core.log"}
+{"time":"2025-06-19T05:20:38.10847448Z","level":"INFO","msg":"created new stream","id":"cdv5belr"}
+{"time":"2025-06-19T05:20:38.108522359Z","level":"INFO","msg":"stream: started","id":"cdv5belr"}
+{"time":"2025-06-19T05:20:38.108540883Z","level":"INFO","msg":"writer: Do: started","stream_id":"cdv5belr"}
+{"time":"2025-06-19T05:20:38.108575708Z","level":"INFO","msg":"handler: started","stream_id":"cdv5belr"}
+{"time":"2025-06-19T05:20:38.108601476Z","level":"INFO","msg":"sender: started","stream_id":"cdv5belr"}
+{"time":"2025-06-19T05:20:38.348698999Z","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-06-19T05:21:34.438074272Z","level":"INFO","msg":"stream: closing","id":"cdv5belr"}
+{"time":"2025-06-19T05:21:34.438123344Z","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-06-19T05:21:34.43924005Z","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-06-19T05:21:34.880355408Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-06-19T05:21:34.984475159Z","level":"INFO","msg":"handler: closed","stream_id":"cdv5belr"}
+{"time":"2025-06-19T05:21:34.98452419Z","level":"INFO","msg":"writer: Close: closed","stream_id":"cdv5belr"}
+{"time":"2025-06-19T05:21:34.984565486Z","level":"INFO","msg":"sender: closed","stream_id":"cdv5belr"}
+{"time":"2025-06-19T05:21:34.984827424Z","level":"INFO","msg":"stream: closed","id":"cdv5belr"}

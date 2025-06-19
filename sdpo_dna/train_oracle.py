@@ -5,7 +5,7 @@ from grelu.lightning import LightningModel
 import grelu.data.dataset
 import os
 
-base_path = '/data/scratch/wangchy/seqft/'
+base_path = 'data_and_model'
 df = pd.read_csv(os.path.join(base_path, 'mdlm/gosai_data/dataset.csv.gz'), index_col=0) # (735156, 5)
 chr_list_1 = [f'chr{i}' for i in range(1, 12)]
 chr_list_2 = [f'chr{i}' for i in range(12, 23)]

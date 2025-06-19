@@ -1,0 +1,58 @@
+0it [00:00, ?it/s]
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 10/10 [00:08<00:00,  1.16it/s]
+Traceback (most recent call last):
+  File "/home/austin/sdpo-private/sdpo_dna/finetune_sdpo.py", line 116, in <module>
+    all_detokenized_samples, model_logl, generated_preds, generated_atac_acc, generated_p_coef = eval_model(model, ref_model, 10, 64, args.verbose)
+  File "/home/austin/sdpo-private/sdpo_dna/eval.py", line 51, in eval_model
+    highexp_kmers_99, n_highexp_kmers_99, highexp_kmers_999, n_highexp_kmers_999, highexp_set_sp_clss_999, highexp_preds_999, highexp_seqs_999 = oracle.cal_highexp_kmers(return_clss=True)
+  File "/home/austin/sdpo-private/sdpo_dna/oracle.py", line 230, in cal_highexp_kmers
+    highexp_preds_999 = cal_gosai_pred_new(
+  File "/home/austin/sdpo-private/sdpo_dna/oracle.py", line 44, in cal_gosai_pred_new
+    model = get_gosai_oracle(mode=mode)
+  File "/home/austin/sdpo-private/sdpo_dna/oracle.py", line 22, in get_gosai_oracle
+    model_load = LightningModel.load_from_checkpoint(os.path.join(base_path, 'mdlm/outputs_gosai/lightning_logs/reward_oracle_eval.ckpt'), map_location='cuda')
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/pytorch_lightning/utilities/model_helpers.py", line 125, in wrapper
+    return self.method(cls, *args, **kwargs)
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/pytorch_lightning/core/module.py", line 1581, in load_from_checkpoint
+    loaded = _load_from_checkpoint(
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/pytorch_lightning/core/saving.py", line 63, in _load_from_checkpoint
+    checkpoint = pl_load(checkpoint_path, map_location=map_location)
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/lightning_fabric/utilities/cloud_io.py", line 59, in _load
+    with fs.open(path_or_url, "rb") as f:
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/fsspec/spec.py", line 1310, in open
+    f = self._open(
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/fsspec/implementations/local.py", line 200, in _open
+    return LocalFileOpener(path, mode, fs=self, **kwargs)
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/fsspec/implementations/local.py", line 364, in __init__
+    self._open()
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/fsspec/implementations/local.py", line 369, in _open
+    self.f = open(self.path, mode=self.mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/data/scratch/wangchy/seqft/mdlm/outputs_gosai/lightning_logs/reward_oracle_eval.ckpt'
+Traceback (most recent call last):
+  File "/home/austin/sdpo-private/sdpo_dna/finetune_sdpo.py", line 116, in <module>
+    all_detokenized_samples, model_logl, generated_preds, generated_atac_acc, generated_p_coef = eval_model(model, ref_model, 10, 64, args.verbose)
+  File "/home/austin/sdpo-private/sdpo_dna/eval.py", line 51, in eval_model
+    highexp_kmers_99, n_highexp_kmers_99, highexp_kmers_999, n_highexp_kmers_999, highexp_set_sp_clss_999, highexp_preds_999, highexp_seqs_999 = oracle.cal_highexp_kmers(return_clss=True)
+  File "/home/austin/sdpo-private/sdpo_dna/oracle.py", line 230, in cal_highexp_kmers
+    highexp_preds_999 = cal_gosai_pred_new(
+  File "/home/austin/sdpo-private/sdpo_dna/oracle.py", line 44, in cal_gosai_pred_new
+    model = get_gosai_oracle(mode=mode)
+  File "/home/austin/sdpo-private/sdpo_dna/oracle.py", line 22, in get_gosai_oracle
+    model_load = LightningModel.load_from_checkpoint(os.path.join(base_path, 'mdlm/outputs_gosai/lightning_logs/reward_oracle_eval.ckpt'), map_location='cuda')
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/pytorch_lightning/utilities/model_helpers.py", line 125, in wrapper
+    return self.method(cls, *args, **kwargs)
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/pytorch_lightning/core/module.py", line 1581, in load_from_checkpoint
+    loaded = _load_from_checkpoint(
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/pytorch_lightning/core/saving.py", line 63, in _load_from_checkpoint
+    checkpoint = pl_load(checkpoint_path, map_location=map_location)
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/lightning_fabric/utilities/cloud_io.py", line 59, in _load
+    with fs.open(path_or_url, "rb") as f:
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/fsspec/spec.py", line 1310, in open
+    f = self._open(
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/fsspec/implementations/local.py", line 200, in _open
+    return LocalFileOpener(path, mode, fs=self, **kwargs)
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/fsspec/implementations/local.py", line 364, in __init__
+    self._open()
+  File "/home/austin/miniconda3/envs/sedd/lib/python3.9/site-packages/fsspec/implementations/local.py", line 369, in _open
+    self.f = open(self.path, mode=self.mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/data/scratch/wangchy/seqft/mdlm/outputs_gosai/lightning_logs/reward_oracle_eval.ckpt'

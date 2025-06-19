@@ -1,0 +1,70 @@
+{
+  "os":  "Linux-5.15.0-1076-oracle-x86_64-with-glibc2.35",
+  "python":  "CPython 3.9.18",
+  "startedAt":  "2025-06-19T05:20:37.995515Z",
+  "args":  [
+    "--K",
+    "1000",
+    "--num_epochs",
+    "1",
+    "--beta",
+    "0.5",
+    "--lr",
+    "3e-4"
+  ],
+  "program":  "/home/austin/sdpo-private/sdpo_dna/finetune_sdpo.py",
+  "codePath":  "sdpo_dna/finetune_sdpo.py",
+  "git":  {
+    "remote":  "https://github.com/Austinwang22/sdpo-private.git",
+    "commit":  "def7753988dfcd784c7a1a17db285e2757fec3b6"
+  },
+  "email":  "akwang@caltech.edu",
+  "root":  "/home/austin/sdpo-private",
+  "host":  "ml-login6",
+  "executable":  "/home/austin/miniconda3/envs/sedd/bin/python3",
+  "codePathLocal":  "sdpo_dna/finetune_sdpo.py",
+  "cpu_count":  64,
+  "cpu_count_logical":  128,
+  "gpu":  "NVIDIA A100-SXM4-80GB",
+  "gpu_count":  4,
+  "disk":  {
+    "/":  {
+      "total":  "1886412726272",
+      "used":  "526013616128"
+    }
+  },
+  "memory":  {
+    "total":  "1082029031424"
+  },
+  "cpu":  {
+    "count":  64,
+    "countLogical":  128
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA A100-SXM4-80GB",
+      "memoryTotal":  "85899345920",
+      "cudaCores":  6912,
+      "architecture":  "Ampere"
+    },
+    {
+      "name":  "NVIDIA A100-SXM4-80GB",
+      "memoryTotal":  "85899345920",
+      "cudaCores":  6912,
+      "architecture":  "Ampere"
+    },
+    {
+      "name":  "NVIDIA A100-SXM4-80GB",
+      "memoryTotal":  "85899345920",
+      "cudaCores":  6912,
+      "architecture":  "Ampere"
+    },
+    {
+      "name":  "NVIDIA A100-SXM4-80GB",
+      "memoryTotal":  "85899345920",
+      "cudaCores":  6912,
+      "architecture":  "Ampere"
+    }
+  ],
+  "cudaVersion":  "12.8"
+}
