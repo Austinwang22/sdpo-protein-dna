@@ -2,7 +2,8 @@
 
 The repository contains the code for the `SDPO` method presented in the paper: Discrete Diffusion Trajectory Alignment
 via Stepwise Decomposition. `SDPO` is a fine-tuning method for the reward optimization or alignment of discrete diffusion models.
-Our code base is based of the [DRAKES repository](https://github.com/ChenyuWang-Monica/DRAKES/tree/master)
+Our code base is based of the [DRAKES repository](https://github.com/ChenyuWang-Monica/DRAKES/tree/master). Paper coming out on
+Arxiv soon!
 
 ## Data and Model Weights
 
